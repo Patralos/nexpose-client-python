@@ -99,17 +99,15 @@ class AssetDetails(AssetBase):
                     UniqueIdentifier.CreateFromJSON(identifier)
                 )
 
-        # TODO:
-        # ----begin
-        details.files = []
-        details.vulnerability_instances = []
-        details.group_accounts = []
-        details.user_accounts = []
-        details.vulnerabilities = []
-        details.software = []
-        details.services = []
-        # TODO:
-        # ----end
+        details.files = json_dict['files']
+        details.vulnerability_instances = json_dict['vulnerability_instances']
+        details.unique_identifiers = json_dict['unique_identifiers']
+        details.group_accounts = json_dict['group_accounts']
+        details.user_accounts = json_dict['user_accounts']
+        details.vulnerabilities = json_dict['vulnerabilities']
+        details.software = json_dict['software']
+        details.services = json_dict['services']
+
         return details
 
     def __init__(self):
